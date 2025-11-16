@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2 style="color:#cfefff">Admin Dashboard</h2>
+
+<h3 style="color:#bdecd6">Existing Plans</h3>
+<table style="width:100%;border-collapse:collapse">
+  <tr style="text-align:left">
+    <th>ID</th><th>Name</th><th>Price</th><th>Stock</th><th>Actions</th>
+  </tr>
+  {% for p in plans %}
+  <tr>
+    <td>{{ p.id }}</td>
+    <td>{{ p.name }}</td>
+    <td>₹{{ p.price }}</td>
+    <td>{{ p.stock }}</td>
+    <td>
+      <form method="post" action="{{ url_for('admin_delete_plan', plan_id=p.id) }}" style="display:inline">
+        <button class="btn" type="submit">Delete</button>
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h3 style="color:#bdecd6;margin-top:16px">Add Plan</h3>
+<form method="post" action="{{ url_for('admin_add_plan') }}" style="display:flex;flex-direction:column;gap:8px;max-width:420px">
+  <input name="name" placeholder="Name" required style="padding:8px;border-radius:6px">
+  <input name="price" placeholder="Price" required style="padding:8px;border-radius:6px">
+  <input name="logo" placeholder="logo filename (e.g. netflix.png)" style="padding:8px;border-radius:6px">
+  <input name="stock" placeholder="Stock" style="padding:8px;border-radius:6px">
+  <input name="desc" placeholder="Short description" style="padding:8px;border-radius:6px">
+  <button class="btn" type="submit">Add Plan</button>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Payment{% endblock %}
+{% block content %}
+<h2 style="color:#cfefff">Payment</h2>
+<div style="display:flex;gap:20px;align-items:center">
+  <img src="{{ url_for('static', filename='images/qr.png') }}" style="width:220px;border-radius:8px">
+  <div>
+    <p style="color:#9fb1c8">Scan QR to pay. After payment submit UTR below.</p>
+    <form action="{{ url_for('submit_utr') }}" method="post" style="display:flex;flex-direction:column;gap:8px">
+      <input name="name" placeholder="Your name" required style="padding:8px;border-radius:6px">
+      <input name="phone" placeholder="Phone" required style="padding:8px;border-radius:6px">
+      <input name="utr" placeholder="UTR / Transaction ID" required style="padding:8px;border-radius:6px">
+      <button class="btn" type="submit">Submit UTR</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
