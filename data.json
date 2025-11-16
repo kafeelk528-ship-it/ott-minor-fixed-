@@ -1,0 +1,35 @@
+{
+    "plans": [
+        {
+            "id": 1,
+            "name": "Netflix Premium",
+            "price": 199,
+            "stock": 10,
+            "logo": "netflix.png"
+        },
+        {
+            "id": 2,
+            "name": "Amazon Prime",
+            "price": 149,
+            "stock": 8,
+            "logo": "prime.png"
+        },
+        {
+            "id": 3,
+            "name": "Disney Hotstar",
+            "price": 299,
+            "stock": 5,
+            "logo": "hotstar.png"
+        },
+        {
+            "id": 4,
+            "name": "Sony Liv",
+            "price": 129,
+            "stock": 12,
+            "logo": "sonyliv.png"
+        }
+    ],
+    "settings": {
+        "qr": "qr.png"
+    }
+}

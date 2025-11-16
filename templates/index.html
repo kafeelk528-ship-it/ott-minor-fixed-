@@ -1,0 +1,1 @@
+{% extends 'layout.html' %}{% block content %}<h2>Plans</h2>{% for p in plans %}<div><img src='/static/images/{{p.logo}}' width='80'> {{p.name}} - ₹{{p.price}} <a href='/add-to-cart/{{p.id}}'>Add</a> <a href='/buy-now/{{p.id}}'>Buy Now</a></div>{% endfor %}{% endblock %}

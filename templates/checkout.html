@@ -1,0 +1,1 @@
+{% extends 'layout.html' %}{% block content %}<h2>Scan & Pay</h2><img src='/static/images/{{qr}}' width='200'><form action='/submit-utr' method='post'><input name='utr'><button>Submit</button></form>{% endblock %}
